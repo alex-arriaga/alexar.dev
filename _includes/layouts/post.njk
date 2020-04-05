@@ -3,9 +3,9 @@ layout: layouts/base.njk
 section: post
 ---
 
-<article>
-  <h1>{{ title }}</h1>
-  <p>
+<article class="al-content">
+  <h1 class="al-content__title">{{ title }}</h1>
+  <p class="al-content__metadata">
     <small>
       <time datetime="{{ date | machineDate }}">{{ date | readableDate }}</time> by {{ metadata.author.name }}
     </small>
@@ -26,6 +26,6 @@ section: post
 
 </article>
 
-<nav>
+<nav class="al-navigation">
   <a href="{{ '/blog/' | url }}">← Blog index</a>
 </nav>

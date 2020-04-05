@@ -1,6 +1,6 @@
-<section>
+<section class="al-section al-section--blog-list">
 	{% for post in postslist | reverse %}
-		<article{% if post.url == url %} data-current="current item"{% endif %}>
+		<article{% if post.url == url %} data-current="current item"{% endif %} class="al-content al-content--blog-post">
 			<h3>
 				<a href="{{ post.url | url }}">
 					{% if post.data.title %}

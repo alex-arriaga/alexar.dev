@@ -5,7 +5,19 @@ const htmlmin = require("html-minifier");
 const slugify = require("slugify");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const inclusiveLangPlugin = require("@11ty/eleventy-plugin-inclusive-language");
+
 module.exports = function(eleventyConfig) {
+
+  // https://www.11ty.dev/docs/plugins/syntaxhighlight/
+  eleventyConfig.addPlugin(syntaxHighlight);
+
+  // https://www.11ty.dev/docs/plugins/inclusive-language/
+  eleventyConfig.addPlugin(inclusiveLangPlugin, {
+    // accepts an array or a comma-delimited string
+    words: "simply,of course,just"
+  });
 
   // Eleventy Navigation https://www.11ty.dev/docs/plugins/navigation/
   eleventyConfig.addPlugin(eleventyNavigationPlugin);
